@@ -1,0 +1,34 @@
+type Movie {
+	id: ID
+	title: String
+	year: String
+	imgUrl: String
+}
+
+type Query {
+	getAllMovies: [Movie]
+}
+
+type Mutation {
+	addMovie(input: addMovieInput): Movie
+	deleteMovie(movieId: ID!): DeletedMovieResponse
+}
+
+input addMovieInput {
+	title: String
+	year: String
+	imgUrl: String
+}
+
+# input addDogInput {
+# 	# id: ID
+# 	name: String!
+# 	gender: Gender
+# 	breed: String
+# 	age: String
+# }
+
+type DeletedMovieResponse {
+	deletedId: ID
+	deleteSuccess: Boolean
+}

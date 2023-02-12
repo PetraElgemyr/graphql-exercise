@@ -1,0 +1,118 @@
+html, body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: orange;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+header {
+background-color: rgb(41, 41, 41);
+box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+width: 100vw;
+/* color: orange; */
+font-weight: 600;
+/* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__article {
+    margin: 3%;
+    padding: 2%;
+    text-align: justify;    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main__section {
+    margin: 3%;
+    background-color: rgba(176, 164, 157, 0.549);
+    padding: 3%;
+    border-radius: 10px;
+    width: 80vw;
+}
+
+section > h2 {
+    text-align: center;
+}
+
+section > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+form > #addDog{
+    margin: 4%;
+}
+
+input {
+    margin: 2%
+}
+
+form > p.errorMsg {
+
+    color: rgb(137, 15, 15);
+    font-weight: 700;
+    font-size: 15pt;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3%;
+    background-color: rgba(33, 33, 33, 0.549);
+    padding: 3%;
+    border-radius: 10px;
+    width: 80vw;
+/*     
+    margin-top: 5%;
+    width: 80vw;
+    background-color: rgba(158, 144, 134, 0.4); */
+}
+
+#rootList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+}
+
+#showDogs {
+    margin: 2%;
+}
+
+#rootList > div {
+    width: 75vw;
+    padding: 3%;
+    margin: 1%;
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
