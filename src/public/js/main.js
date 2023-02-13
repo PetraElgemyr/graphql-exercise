@@ -1,5 +1,4 @@
 console.log('hej')
-// let movies = []
 
 const graphQlQueryBase = async (url, query, variables = {}) => {
 	const response = await fetch(url, {
@@ -15,40 +14,6 @@ const graphQlQueryBase = async (url, query, variables = {}) => {
 	const res = await response.json()
 	return res.data
 }
-
-// const getMoviesBtn = document.getElementById('getAllMoviesBtn')
-
-// getMoviesBtn.addEventListener('click', async (event) => {
-// 	event.preventDefault()
-// 	const response = await graphQlQuery('http://localhost:4000/graphql', getAllMoviesQuery)
-// 	// console.log(response)
-// 	movies = response.getAllMovies
-// 	console.log(movies)
-// 	createHtml(movies)
-// })
-
-// function createHtml(movies) {
-// 	const listRoot = document.getElementById('rootList')
-// 	listRoot.innerHTML = ''
-
-// 	for (let i = 0; i < movies.length; i++) {
-// 		let dogContainer = document.createElement('div')
-// 		let title = document.createElement('p')
-// 		let year = document.createElement('span')
-// 		let img = document.createElement('img')
-// 		let movieId = document.createElement('span')
-
-// 		title.innerHTML = movies[i].title
-// 		year.innerHTML = movies[i].year
-// 		img.src = movies[i].imgUrl
-// 		img.classList.add('book__img')
-// 		movieId.innerHTML = 'Registreringsnummer: ' + movies[i].id
-
-// 		dogContainer.append(img, title, year, movieId)
-
-// 		listRoot.appendChild(dogContainer)
-// 	}
-// }
 
 let title = document.getElementById('title')
 let year = document.getElementById('year')
@@ -88,5 +53,55 @@ addMovieBtn?.addEventListener('click', async (e) => {
 		errorBox.className = 'errorMsg'
 		errorBox.innerHTML = 'You need to fill all the fields before you can add a movie to the list!'
 		formBox.appendChild(errorBox)
+	}
+})
+
+let movies = []
+let searchButton = document.getElementById('searchBtn')
+searchButton.addEventListener('click', async () => {
+	const getAllMoviesQuery = `query Query {
+		getAllMovies {
+		  id
+		  title
+		  year
+		  imgUrl
+		}
+	  }`
+
+	const response = await graphQlQueryBase('http://localhost:4000/graphql', getAllMoviesQuery)
+	// console.log(response)
+	movies = response.getAllMovies
+	console.log('filmerna', movies)
+
+	let input = document.getElementById('searchInput')
+	let resultBox = document.getElementById('searchedBox')
+	let text = input.value
+	let newText = text.toLowerCase().trim()
+	console.log(newText)
+
+	for (let i = 0; i < movies.length; i++) {
+		let movieTitle = movies[i].title
+		let newTitle = movieTitle.toLowerCase().trim()
+
+		if (newText === newTitle) {
+			resultBox.innerHTML = 'Yay! This movie was on the list'
+
+			let movieContainer = document.createElement('div')
+			let title = document.createElement('p')
+			let year = document.createElement('span')
+			let img = document.createElement('img')
+			// let movieId = document.createElement('span')
+
+			movieContainer.classList.add('movie__container')
+			title.innerHTML = movies[i].title
+			year.innerHTML = movies[i].year
+			img.src = movies[i].imgUrl
+			img.classList.add('book__img')
+			// movieId.innerHTML = 'Registreringsnummer: ' + movies[i].id
+
+			movieContainer.append(img, title, year /*movieId  */)
+
+			resultBox.appendChild(movieContainer)
+		}
 	}
 })

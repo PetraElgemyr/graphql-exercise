@@ -9,30 +9,31 @@
 		<script defer src="/js/main.js" type="module"></script>
 	</head>
 	<body>
-		<header><h1>Movies through time</h1></header>
-		<div class="container">
-			<article class="main__article">
-				This page contains a list of well known movies from different genres, different times and for different ages, that is
-				appreciated by many today.
-			</article>
-			<section class="main__section">
-				<h2>Add a movie to the list below</h2>
-				<span>Remember to write the image url</span>
-				<form id="addForm">
-					<!-- <input id="regNr" type="text" placeholder="Kundnummer" /> -->
-					<label>Title: </label>
-					<input id="title" type="text" placeholder="Forrest Gump" />
-					<label>Year: </label>
-					<input id="year" type="text" placeholder="1994" />
-					<label>Image URL: </label>
-					<input id="imgUrl" type="text" placeholder="https://...jpg" />
-					<button id="addMovie" type="button">Add movie</button>
-				</form>
-				<div><a id="getAllMoviesBtn" href="./showMovieList.html">Click to show the list</a></div>
-								<!-- <div id="rootList"></div> -->
+		<div class="big__wrapper">
+			<header><h1>Movies through time</h1></header>
+			<div class="container">
+				<article class="main__article">
+					This page contains a list of well known movies from different genres, different times and for different ages, that
+					is appreciated by many today. Anyone can change the list by adding new movies they see fit and (soon) remove movies
+					from the list.
+				</article>
+				<nav class="navMenu">
+					<ul>
+						<li>
+							<a id="getAllMoviesBtn" href="./showMovieList.html">Show the list</a>
+						</li>
+						<li>
+							<a id="addNewMovie" href="./addMovieForm.html">Add movie to list</a>
+						</li>
+						<li class="searchLi">
+							Search:
+							<input id="searchInput" type="text" />
+							<span id="searchBtn">Go!</span>
+						</li>
+					</ul>
+				</nav>
 			</div>
-			</section>
-		
+			<div id="searchedBox"></div>
 		</div>
 	</body>
 </html>
