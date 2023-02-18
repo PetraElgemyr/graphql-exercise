@@ -1,10 +1,16 @@
+* {
+	box-sizing: border-box;
+	overflow-x: hidden;
+	font-family: monospace;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 	background-color: black;
-	font-family: monospace;
+	/* font-family: monospace; */
 	color: white;
 }
 
@@ -22,11 +28,12 @@ header {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	padding: 20px;
 }
 
 h1 {
 	border-radius: 50%;
-	font-family: monospace;
+	/* font-family: monospace; */
 	box-shadow: 0 10px 27px rgb(222, 111, 0);
 	background-color: rgb(23, 23, 23);
 	width: 90vw;
@@ -78,7 +85,7 @@ li {
 }
 
 li > a {
-	font-family: monospace;
+	/* font-family: monospace; */
 	color: black;
 	text-decoration: none;
 }

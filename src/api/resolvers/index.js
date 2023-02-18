@@ -1,10 +1,8 @@
 const path = require('path')
 const fsPromises = require('fs/promises')
-const { fileExists, readJsonFile } = require('../utils/fileHandling')
-const { GraphQLError } = require('graphql')
-const crypto = require('node:crypto')
-const { log } = require('console')
-const { argsToArgsConfig } = require('graphql/type/definition')
+const { fileExists, readJsonFile, deleteFile, getDirectoryFileNames } = require('./../../utils/fileHandling')
+const { GraphQLError, printType } = require('graphql')
+const crypto = require('crypto')
 const axios = require('axios').default
 // Create a variable holding the file path (from computer root directory) to the project fiel directory
 
