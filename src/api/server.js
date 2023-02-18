@@ -7,6 +7,7 @@ const path = require('path')
 const { expressMiddleware } = require('@apollo/server/express4')
 const express = require('express')
 const cors = require('cors')
+const buildSchema = require('graphql')
 
 const app = express()
 app.use(express.json())
